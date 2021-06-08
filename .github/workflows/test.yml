@@ -27,3 +27,6 @@ jobs:
   test:
     container: docker.pkg.github.com/jamierowen/docker_test/octo-image:master
     runs-on: ubuntu-latest
+    steps:
+      - name: Testy
+        run: echo test
