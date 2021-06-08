@@ -24,3 +24,6 @@ jobs:
           tags: |
             docker.pkg.github.com/jamierowen/docker_test/octo-image:${{ github.sha }}
             docker.pkg.github.com/jamierowen/docker_test/octo-image:master
+  test:
+    container: docker.pkg.github.com/jamierowen/docker_test/octo-image:master
+    runs-on: ubuntu-latest
