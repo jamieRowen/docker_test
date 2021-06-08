@@ -1,0 +1,21 @@
+name: Test
+on:
+  workflow_run:
+    workflows: ["Publish Docker image"]
+    branches: 
+      - main
+      - master
+      - add-staging-env
+    types: 
+      - completed
+jobs:
+  test:
+    container:
+      image: docker.pkg.github.com/jamierowen/docker_test/octo-image:master
+      credentials:
+        username: ${{ github.actor }}
+        password: ${{ secrets.GITHUB_TOKEN }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Testy
+        run: echo test

@@ -24,13 +24,4 @@ jobs:
           tags: |
             docker.pkg.github.com/jamierowen/docker_test/octo-image:${{ github.sha }}
             docker.pkg.github.com/jamierowen/docker_test/octo-image:master
-  test:
-    container:
-      image: docker.pkg.github.com/jamierowen/docker_test/octo-image:master
-      credentials:
-        username: ${{ github.actor }}
-        password: ${{ secrets.GITHUB_TOKEN }}
-    runs-on: ubuntu-latest
-    steps:
-      - name: Testy
-        run: echo test
+  
